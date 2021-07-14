@@ -1,5 +1,7 @@
 #include "bits.h"
-
+// Return the index of 2 numbers whose sum equals to a target
+// adding the pair<number,index> to a new vector and using sorting to get the answer
+// Inefficient code
 bool compare(pair<int,int>&a,pair<int,int>&b)
 {
     return a.first<b.first;

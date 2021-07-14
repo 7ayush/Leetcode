@@ -1,3 +1,6 @@
+
+// Return the index of 2 numbers whose sum equals to a target
+// Brute force method using 2 for loops
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) 

@@ -1,3 +1,4 @@
+// Return the index of 2 numbers whose sum equals to a target
 // Insertion->O (logn) access->O(logn)
 // Unordered Map can also be used
 #include "bits.h"
