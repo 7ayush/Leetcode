@@ -1,0 +1,16 @@
+// Finding an substr in a string
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        if(needle=="")return 0;
+        int found=haystack.find(needle);
+        if(found!=string::npos)
+        {
+            return found;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+};
