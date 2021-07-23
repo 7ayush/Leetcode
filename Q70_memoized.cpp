@@ -1,5 +1,6 @@
 // Recursion with memoization to overcome repeating calls
-
+// Time-> O(N) 
+// Space->O(N) recursion tree can go upto n and also for the extra storage array
 class Solution {
 public:
     int climbRecursive(int i,int n,int *arr)
@@ -17,3 +18,4 @@ public:
         return climbRecursive(0,n,arr);
     }
 };
+

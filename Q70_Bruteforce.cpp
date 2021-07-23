@@ -1,4 +1,6 @@
 // Bruteforce method without any memoization
+// Time-> O(2^n) 
+// Space-> O(n) height of recursion tree
 class Solution {
 public:
     int climbRecursive(int i,int n)
