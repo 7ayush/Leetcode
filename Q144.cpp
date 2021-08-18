@@ -28,3 +28,27 @@ public:
         return vec;
     }
 };
+
+
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) 
+    {        
+        vector<int>vec;
+        if(!root)return vec;
+        stack<TreeNode*>s;
+        s.push(root);
+        TreeNode *curr;
+        while(!s.empty())
+        {
+            
+            curr=s.top();
+            s.pop();
+            vec.push_back(curr->val);            
+            if(curr->right)s.push(curr->right);         
+            if(curr->left)s.push(curr->left);
+               
+        }
+        return vec;
+    }
+};

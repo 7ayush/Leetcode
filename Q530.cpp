@@ -1,4 +1,4 @@
-//Bruteforce solb
+// BruteForce Solution storing inorder traversal and then returning the minimum consecutive difference 
 class Solution {
 public:
     void util(TreeNode* root,vector<int>&vec)
