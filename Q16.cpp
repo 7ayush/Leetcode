@@ -1,25 +1,26 @@
-// First running fast pointer from 0-n and for the remaining time running the slow pointer and fast pointer till the fast pointer is not NULL
 class Solution {
 public:
-    
-    ListNode* removeNthFromEnd(ListNode* head, int n) 
-    {
-        ListNode *slow=head;
-        ListNode *fast=head;
-        for(int i=1;i<=n;i++){
-            if(fast)
-                fast=fast->next;       
-            
-        }
-        
-        if(fast==NULL)return head->next;
-        
-        while(fast->next)
+    int threeSumClosest(vector<int>& nums, int target) {
+        int minDist=INT_MAX;
+        int ans=0;
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<nums.size()-2;i++)
         {
-            fast=fast->next;
-            slow=slow->next;
+            int j=i+1;
+            int k=nums.size()-1;
+            while(j<k)
+            {
+                int sum=nums[i]+nums[j]+nums[k];
+                if(sum==target)return target;
+                else if(sum>target) k--;
+                else j++;
+                if(minDist>abs(sum-target)){
+                    ans=sum;
+                    minDist=abs(sum-target);
+                }                
+            }
         }
-        slow->next=slow->next->next;            
-        return head;
+        return ans;
     }
 };
+
