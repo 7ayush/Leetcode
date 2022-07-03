@@ -32,3 +32,23 @@ public:
         return -1;
     }
 };
+class Solution {
+public:
+    int findDuplicate(vector<int>& arr) 
+    {
+        for(int i=0;i<arr.size();i++)
+        {
+            int x=abs(arr[i]);
+            if(arr[x]<0)
+            {
+                return x;
+            }
+            else
+            {
+                arr[x]*=-1;
+            }
+        }
+        return -1;
+    }
+};
+

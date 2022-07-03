@@ -7,7 +7,6 @@ public:
         {
             nums[i]+=max(nums[i-2],nums[i-3]);
         }
-        return *max_element(nums.begin(),nums.end());
+        return max(nums[nums.size()-1],nums[nums.size()-2]);
     }
 };
-
