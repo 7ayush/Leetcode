@@ -75,3 +75,39 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+    void dfs(vector<int>&edges,int node,int &ans,vector<vector<int>>&vis,int count)
+    {
+        int curr=1;
+        while(node!=-1)
+        {   
+            if(vis[node][0]==count)
+            {
+                ans=max(ans,curr-vis[node][1]);  
+                return;
+            }
+            else if(vis[node][0]!=0)return;
+            else 
+            {
+                vis[node][0]=count;
+                vis[node][1]=curr;                
+            }
+            curr++;
+            node=edges[node];            
+        }
+    }
+    int longestCycle(vector<int>& edges) {
+        int ans=-1;
+        vector<vector<int>>vis(edges.size(),vector<int>(2,0));
+        int count=1;
+        for(int i=0;i<edges.size();i++)
+        {
+            if(!vis[i][0]){                
+                dfs(edges,i,ans,vis,count++);   
+            }
+        }
+        return ans;      
+    }
+};
