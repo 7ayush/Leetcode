@@ -61,3 +61,23 @@ public:
         return util(0, -1, nums, dp);       
     }
 };
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) 
+    {
+        int n=nums.size();
+        vector<int>dp(1);
+        dp[0]=nums[0];
+        for(int i=1;i<n;i++)
+        {            
+            if(nums[i]<=dp[dp.size()-1])
+            {
+                int x=lower_bound(dp.begin(),dp.end(),nums[i])-dp.begin();
+                dp[x]=nums[i];
+            }
+            else
+                dp.push_back(nums[i]);
+        }
+        return dp.size();
+    }
+};
